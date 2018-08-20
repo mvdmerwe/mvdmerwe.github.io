@@ -23,7 +23,6 @@
         </div>
         <script src="js/qgis2web_expressions.js"></script>
         <script src="js/leaflet.js"></script>
-        <script src="js/multi-style-layer.js"></script>
         <script src="js/leaflet.rotatedMarker.js"></script>
         <script src="js/leaflet.pattern.js"></script>
         <script src="js/leaflet-hash.js"></script>
@@ -59,6 +58,7 @@
             if (bounds_group.getLayers().length) {
                 map.fitBounds(bounds_group.getBounds());
             }
+            map.setMaxBounds(map.getBounds());
         }
         var overlay_BasemapStamenTonerLite_0 = L.tileLayer('http://tile.stamen.com/toner-lite/{z}/{x}/{y}.png', {
             opacity: 1.0
@@ -157,112 +157,14 @@
             }
             }
         }
-        function style_Buildings_1_1(feature) {
-            if (feature.properties['Height'] >= 0.000000 && feature.properties['Height'] <= 5.000000 ) {
-                return {
-                pane: 'pane_Buildings_1',
-                opacity: 1,
-                color: 'rgba(35,35,35,1.0)',
-                dashArray: '',
-                lineCap: 'square',
-                lineJoin: 'bevel',
-                weight: 1.0,
-                fillOpacity: 0,
-            }
-            }
-            if (feature.properties['Height'] >= 5.000000 && feature.properties['Height'] <= 15.000000 ) {
-                return {
-                pane: 'pane_Buildings_1',
-                opacity: 1,
-                color: 'rgba(7,45,149,1.0)',
-                dashArray: '',
-                lineCap: 'square',
-                lineJoin: 'bevel',
-                weight: 1.0,
-                fillOpacity: 0,
-            }
-            }
-            if (feature.properties['Height'] >= 15.000000 && feature.properties['Height'] <= 30.000000 ) {
-                return {
-                pane: 'pane_Buildings_1',
-                opacity: 1,
-                color: 'rgba(60,100,176,1.0)',
-                dashArray: '',
-                lineCap: 'square',
-                lineJoin: 'bevel',
-                weight: 1.0,
-                fillOpacity: 0,
-            }
-            }
-            if (feature.properties['Height'] >= 30.000000 && feature.properties['Height'] <= 60.000000 ) {
-                return {
-                pane: 'pane_Buildings_1',
-                opacity: 1,
-                color: 'rgba(113,156,203,1.0)',
-                dashArray: '',
-                lineCap: 'square',
-                lineJoin: 'bevel',
-                weight: 1.0,
-                fillOpacity: 0,
-            }
-            }
-            if (feature.properties['Height'] >= 60.000000 && feature.properties['Height'] <= 145.000000 ) {
-                return {
-                pane: 'pane_Buildings_1',
-                opacity: 1,
-                color: 'rgba(166,212,231,1.0)',
-                dashArray: '',
-                lineCap: 'square',
-                lineJoin: 'bevel',
-                weight: 1.0,
-                fillOpacity: 0,
-            }
-            }
-            if (feature.properties['Height'] >= 145.000000 && feature.properties['Height'] <= 190.000000 ) {
-                return {
-                pane: 'pane_Buildings_1',
-                opacity: 1,
-                color: 'rgba(230,244,204,1.0)',
-                dashArray: '',
-                lineCap: 'square',
-                lineJoin: 'bevel',
-                weight: 1.0,
-                fillOpacity: 0,
-            }
-            }
-            if (feature.properties['Height'] >= 190.000000 && feature.properties['Height'] <= 240.000000 ) {
-                return {
-                pane: 'pane_Buildings_1',
-                opacity: 1,
-                color: 'rgba(254,199,125,1.0)',
-                dashArray: '',
-                lineCap: 'square',
-                lineJoin: 'bevel',
-                weight: 1.0,
-                fillOpacity: 0,
-            }
-            }
-            if (feature.properties['Height'] >= 240.000000 && feature.properties['Height'] <= 310.000000 ) {
-                return {
-                pane: 'pane_Buildings_1',
-                opacity: 1,
-                color: 'rgba(215,25,28,1.0)',
-                dashArray: '',
-                lineCap: 'square',
-                lineJoin: 'bevel',
-                weight: 1.0,
-                fillOpacity: 0,
-            }
-            }
-        }
         map.createPane('pane_Buildings_1');
         map.getPane('pane_Buildings_1').style.zIndex = 401;
         map.getPane('pane_Buildings_1').style['mix-blend-mode'] = 'normal';
-        var layer_Buildings_1 = new L.geoJson.multiStyle(json_Buildings_1, {
+        var layer_Buildings_1 = new L.geoJson(json_Buildings_1, {
             attribution: '<a href=""></a>',
             pane: 'pane_Buildings_1',
             onEachFeature: pop_Buildings_1,
-            styles: [style_Buildings_1_0,style_Buildings_1_1,]
+            style: style_Buildings_1_0,
         });
         bounds_group.addLayer(layer_Buildings_1);
         map.addLayer(layer_Buildings_1);
@@ -382,112 +284,14 @@
             }
             }
         }
-        function style_Developmentactivity_2_1(feature) {
-            if (feature.properties['q2wHide_bldhgt_ahd'] >= 0.000000 && feature.properties['q2wHide_bldhgt_ahd'] <= 5.000000 ) {
-                return {
-                pane: 'pane_Developmentactivity_2',
-                opacity: 1,
-                color: 'rgba(35,35,35,1.0)',
-                dashArray: '',
-                lineCap: 'square',
-                lineJoin: 'bevel',
-                weight: 1.0,
-                fillOpacity: 0,
-            }
-            }
-            if (feature.properties['q2wHide_bldhgt_ahd'] >= 5.000000 && feature.properties['q2wHide_bldhgt_ahd'] <= 15.000000 ) {
-                return {
-                pane: 'pane_Developmentactivity_2',
-                opacity: 1,
-                color: 'rgba(7,45,149,1.0)',
-                dashArray: '',
-                lineCap: 'square',
-                lineJoin: 'bevel',
-                weight: 1.0,
-                fillOpacity: 0,
-            }
-            }
-            if (feature.properties['q2wHide_bldhgt_ahd'] >= 15.000000 && feature.properties['q2wHide_bldhgt_ahd'] <= 30.000000 ) {
-                return {
-                pane: 'pane_Developmentactivity_2',
-                opacity: 1,
-                color: 'rgba(60,100,176,1.0)',
-                dashArray: '',
-                lineCap: 'square',
-                lineJoin: 'bevel',
-                weight: 1.0,
-                fillOpacity: 0,
-            }
-            }
-            if (feature.properties['q2wHide_bldhgt_ahd'] >= 30.000000 && feature.properties['q2wHide_bldhgt_ahd'] <= 60.000000 ) {
-                return {
-                pane: 'pane_Developmentactivity_2',
-                opacity: 1,
-                color: 'rgba(113,156,203,1.0)',
-                dashArray: '',
-                lineCap: 'square',
-                lineJoin: 'bevel',
-                weight: 1.0,
-                fillOpacity: 0,
-            }
-            }
-            if (feature.properties['q2wHide_bldhgt_ahd'] >= 60.000000 && feature.properties['q2wHide_bldhgt_ahd'] <= 145.000000 ) {
-                return {
-                pane: 'pane_Developmentactivity_2',
-                opacity: 1,
-                color: 'rgba(166,212,231,1.0)',
-                dashArray: '',
-                lineCap: 'square',
-                lineJoin: 'bevel',
-                weight: 1.0,
-                fillOpacity: 0,
-            }
-            }
-            if (feature.properties['q2wHide_bldhgt_ahd'] >= 145.000000 && feature.properties['q2wHide_bldhgt_ahd'] <= 190.000000 ) {
-                return {
-                pane: 'pane_Developmentactivity_2',
-                opacity: 1,
-                color: 'rgba(230,244,204,1.0)',
-                dashArray: '',
-                lineCap: 'square',
-                lineJoin: 'bevel',
-                weight: 1.0,
-                fillOpacity: 0,
-            }
-            }
-            if (feature.properties['q2wHide_bldhgt_ahd'] >= 190.000000 && feature.properties['q2wHide_bldhgt_ahd'] <= 240.000000 ) {
-                return {
-                pane: 'pane_Developmentactivity_2',
-                opacity: 1,
-                color: 'rgba(254,199,125,1.0)',
-                dashArray: '',
-                lineCap: 'square',
-                lineJoin: 'bevel',
-                weight: 1.0,
-                fillOpacity: 0,
-            }
-            }
-            if (feature.properties['q2wHide_bldhgt_ahd'] >= 240.000000 && feature.properties['q2wHide_bldhgt_ahd'] <= 310.000000 ) {
-                return {
-                pane: 'pane_Developmentactivity_2',
-                opacity: 1,
-                color: 'rgba(215,25,28,1.0)',
-                dashArray: '',
-                lineCap: 'square',
-                lineJoin: 'bevel',
-                weight: 1.0,
-                fillOpacity: 0,
-            }
-            }
-        }
         map.createPane('pane_Developmentactivity_2');
         map.getPane('pane_Developmentactivity_2').style.zIndex = 402;
         map.getPane('pane_Developmentactivity_2').style['mix-blend-mode'] = 'normal';
-        var layer_Developmentactivity_2 = new L.geoJson.multiStyle(json_Developmentactivity_2, {
+        var layer_Developmentactivity_2 = new L.geoJson(json_Developmentactivity_2, {
             attribution: '<a href=""></a>',
             pane: 'pane_Developmentactivity_2',
             onEachFeature: pop_Developmentactivity_2,
-            styles: [style_Developmentactivity_2_0,style_Developmentactivity_2_1,]
+            style: style_Developmentactivity_2_0,
         });
         bounds_group.addLayer(layer_Developmentactivity_2);
         map.addLayer(layer_Developmentactivity_2);

@@ -50,14 +50,11 @@
         }
         var map = L.map('map', {
             zoomControl:true, maxZoom:28, minZoom:1
-        })
+        }).fitBounds([[-37.83498045473414,144.9109702895553],[-37.77902181795125,145.00903780808284]]);
         var hash = new L.Hash(map);
         map.attributionControl.addAttribution('<a href="https://github.com/tomchadwin/qgis2web" target="_blank">qgis2web</a>');
         var bounds_group = new L.featureGroup([]);
         function setBounds() {
-            if (bounds_group.getLayers().length) {
-                map.fitBounds(bounds_group.getBounds());
-            }
             map.setMaxBounds(map.getBounds());
         }
         var overlay_BasemapStamenTonerLite_0 = L.tileLayer('http://tile.stamen.com/toner-lite/{z}/{x}/{y}.png', {
@@ -84,7 +81,7 @@
         }
 
         function style_Buildings_1_0(feature) {
-            if (feature.properties['Height'] >= 0.000000 && feature.properties['Height'] <= 17.000000 ) {
+            if (feature.properties['Height'] >= -1.000000 && feature.properties['Height'] <= 17.000000 ) {
                 return {
                 pane: 'pane_Buildings_1',
                 stroke: false, 
@@ -296,7 +293,7 @@
         bounds_group.addLayer(layer_Developmentactivity_2);
         map.addLayer(layer_Developmentactivity_2);
         var baseMaps = {};
-        L.control.layers(baseMaps,{'Development activity<br /><table><tr><td style="text-align: center;"><img src="legend/Developmentactivity_2_017m0.png" /></td><td> 0 - 17 m</td></tr><tr><td style="text-align: center;"><img src="legend/Developmentactivity_2_1729m1.png" /></td><td> 17 - 29 m</td></tr><tr><td style="text-align: center;"><img src="legend/Developmentactivity_2_2941m2.png" /></td><td> 29 - 41 m</td></tr><tr><td style="text-align: center;"><img src="legend/Developmentactivity_2_4158m3.png" /></td><td> 41 - 58 m</td></tr><tr><td style="text-align: center;"><img src="legend/Developmentactivity_2_5888m4.png" /></td><td> 58 - 88 m</td></tr><tr><td style="text-align: center;"><img src="legend/Developmentactivity_2_88132m5.png" /></td><td> 88 - 132 m</td></tr><tr><td style="text-align: center;"><img src="legend/Developmentactivity_2_132217m6.png" /></td><td> 132 - 217 m</td></tr><tr><td style="text-align: center;"><img src="legend/Developmentactivity_2_217327m7.png" /></td><td> 217 - 327 m</td></tr></table>': layer_Developmentactivity_2,'Buildings<br /><table><tr><td style="text-align: center;"><img src="legend/Buildings_1_017m0.png" /></td><td> 0 - 17 m</td></tr><tr><td style="text-align: center;"><img src="legend/Buildings_1_1729m1.png" /></td><td> 17 - 29 m</td></tr><tr><td style="text-align: center;"><img src="legend/Buildings_1_2941m2.png" /></td><td> 29 - 41 m</td></tr><tr><td style="text-align: center;"><img src="legend/Buildings_1_4158m3.png" /></td><td> 41 - 58 m</td></tr><tr><td style="text-align: center;"><img src="legend/Buildings_1_5888m4.png" /></td><td> 58 - 88 m</td></tr><tr><td style="text-align: center;"><img src="legend/Buildings_1_88132m5.png" /></td><td> 88 - 132 m</td></tr><tr><td style="text-align: center;"><img src="legend/Buildings_1_132217m6.png" /></td><td> 132 - 217 m</td></tr><tr><td style="text-align: center;"><img src="legend/Buildings_1_217327m7.png" /></td><td> 217 - 327 m</td></tr></table>': layer_Buildings_1,"Basemap (Stamen Toner Lite)": overlay_BasemapStamenTonerLite_0,},{collapsed:false}).addTo(map);
+        L.control.layers(baseMaps,{'Development activity<br /><table><tr><td style="text-align: center;"><img src="legend/Developmentactivity_2_017m0.png" /></td><td> 0 - 17 m</td></tr><tr><td style="text-align: center;"><img src="legend/Developmentactivity_2_1729m1.png" /></td><td> 17 - 29 m</td></tr><tr><td style="text-align: center;"><img src="legend/Developmentactivity_2_2941m2.png" /></td><td> 29 - 41 m</td></tr><tr><td style="text-align: center;"><img src="legend/Developmentactivity_2_4158m3.png" /></td><td> 41 - 58 m</td></tr><tr><td style="text-align: center;"><img src="legend/Developmentactivity_2_5888m4.png" /></td><td> 58 - 88 m</td></tr><tr><td style="text-align: center;"><img src="legend/Developmentactivity_2_88132m5.png" /></td><td> 88 - 132 m</td></tr><tr><td style="text-align: center;"><img src="legend/Developmentactivity_2_132217m6.png" /></td><td> 132 - 217 m</td></tr><tr><td style="text-align: center;"><img src="legend/Developmentactivity_2_217327m7.png" /></td><td> 217 - 327 m</td></tr></table>': layer_Developmentactivity_2,'Buildings<br /><table><tr><td style="text-align: center;"><img src="legend/Buildings_1_117m0.png" /></td><td> -1 - 17 m</td></tr><tr><td style="text-align: center;"><img src="legend/Buildings_1_1729m1.png" /></td><td> 17 - 29 m</td></tr><tr><td style="text-align: center;"><img src="legend/Buildings_1_2941m2.png" /></td><td> 29 - 41 m</td></tr><tr><td style="text-align: center;"><img src="legend/Buildings_1_4158m3.png" /></td><td> 41 - 58 m</td></tr><tr><td style="text-align: center;"><img src="legend/Buildings_1_5888m4.png" /></td><td> 58 - 88 m</td></tr><tr><td style="text-align: center;"><img src="legend/Buildings_1_88132m5.png" /></td><td> 88 - 132 m</td></tr><tr><td style="text-align: center;"><img src="legend/Buildings_1_132217m6.png" /></td><td> 132 - 217 m</td></tr><tr><td style="text-align: center;"><img src="legend/Buildings_1_217327m7.png" /></td><td> 217 - 327 m</td></tr></table>': layer_Buildings_1,"Basemap (Stamen Toner Lite)": overlay_BasemapStamenTonerLite_0,},{collapsed:false}).addTo(map);
         setBounds();
         </script>
     </body>
